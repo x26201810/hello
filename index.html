@@ -16,43 +16,139 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    background: var(--bg); color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto,
-    line-height: 1.4; min-height: 100vh; display: flex; flex-direction: column;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
-  header { padding: 20px 18px 14px; border-bottom: 4px solid var(--accent); transition: border-color .3s; }
-  .brand { font-size: 1.9rem; font-weight: 900; letter-spacing}
+  header {
+    padding: 20px 18px 14px;
+    border-bottom: 4px solid var(--accent);
+    transition: border-color .3s;
+  }
+  .brand {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+  }
   .brand span { color: var(--accent); transition: color .3s; }
-  label { display: block; font-size: .85rem; color: var(--mute
+  label {
+    display: block;
+    font-size: .85rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
   select {
-    width: 100%; font: inherit; font-size: 1.1rem; font-weight
-    color: var(--text); background: var(--card-2);
-    border: 2px solid transparent; border-radius: 12px; paddin
+    width: 100%;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--card-2);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 12px 14px;
   }
   select:focus { outline: none; border-color: var(--accent); }
 
-  main { flex: 1; padding: 16px 18px; max-width: 720px; width:
-  .stop-title { display: flex; align-items: center; gap: 10px; font-size: 1.5rem; font-weight: 800; margin: 4px 0 12px; }
-  .dot { width: 14px; height: 14px; border-radius: 50%; backgrne; }
-
-  .message { background: var(--card); border-left: 5px solid v12px; padding: 12px 14px; margin-bottom: 16px; font-size: 1rem; }
-  .error { background: var(--warn-bg); color: var(--warn-text)g: 12px 14px; margin-bottom: 16px; font-weight: 600; }
+  main {
+    flex: 1;
+    padding: 16px 18px;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .stop-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 4px 0 12px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .message {
+    background: var(--card);
+    border-left: 5px solid var(--accent);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .error {
+    background: var(--warn-bg);
+    color: var(--warn-text);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
   .error[hidden] { display: none; }
 
   .directions { display: grid; gap: 16px; }
-  @media (min-width: 640px) { .directions { grid-template-colu
+  @media (min-width: 640px) {
+    .directions { grid-template-columns: 1fr 1fr; }
+  }
   .dir { background: var(--card); border-radius: 18px; padding: 16px; }
-  .dir h2 { margin: 0 0 10px; font-size: .9rem; text-transform.12em; color: var(--muted); }
-  .tram { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-top: 1px solid #2c303c; }
+  .dir h2 {
+    margin: 0 0 10px;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted);
+  }
+  .tram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid #2c303c;
+  }
   .tram:first-of-type { border-top: none; }
   .dest { font-size: 1.15rem; font-weight: 600; overflow-wrap: anywhere; }
-  .due { font-size: 2.6rem; font-weight: 900; font-variant-numht: 1; white-space: nowrap; }
-  .due small { font-size: .9rem; font-weight: 600; color: var(--muted); margin-left: 3px; }
-  .due.now { color: var(--accent); font-size: 2rem; text-trans
+  .due {
+    font-size: 2.6rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .due small {
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-left: 3px;
+  }
+  .due.now {
+    color: var(--accent);
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
   .none { color: var(--muted); padding: 8px 0; }
 
-  .updated { margin-top: 16px; color: var(--muted); font-size: .9rem; text-align: center; }
-  footer { padding: 18px; text-align: center; color: var(--mutr-top: 1px solid #2c303c; }
+  .updated {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: .9rem;
+    text-align: center;
+  }
+  footer {
+    padding: 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    border-top: 1px solid #2c303c;
+  }
 </style>
 </head>
 <body>
@@ -70,7 +166,10 @@
   <div id="updated" class="updated">Last updated: —</div>
 </main>
 
-<footer>Data: Transport Infrastructure Ireland. Built by Kevin
+<footer>
+  Data: Transport Infrastructure Ireland.
+  Built by Kevin Ronan for BDAIB.
+</footer>
 
 <script>
   const API = "https://luas-class.kluxy.app";
@@ -83,7 +182,7 @@
     error: document.getElementById("error"),
     message: document.getElementById("message"),
     directions: document.getElementById("directions"),
-    updated: document.getElementById("updated"),
+    updated: document.getElementById("updated")
   };
 
   let stops = [];
@@ -94,6 +193,7 @@
     els.error.textContent = "⚠️ " + text;
     els.error.hidden = false;
   }
+
   function clearError() {
     els.error.hidden = true;
     els.error.textContent = "";
@@ -101,13 +201,17 @@
 
   async function getJSON(url) {
     const ctrl = new AbortController();
-    const t = setTimeout(() => ctrl.abort(), 10000);
+    const t = setTimeout(function () { ctrl.abort(); }, 10000);
     try {
       const res = await fetch(url, { signal: ctrl.signal, cache: "no-store" });
-      if (!res.ok) throw new Error(`Server replied ${res.statu;
+      if (!res.ok) {
+        throw new Error("Server replied " + res.status);
+      }
       return await res.json();
     } catch (e) {
-      if (e.name === "AbortError") throw new Error("Request timed out after 10 seconds");
+      if (e.name === "AbortError") {
+        throw new Error("Request timed out after 10 seconds");
+      }
       throw e;
     } finally {
       clearTimeout(t);
@@ -115,46 +219,58 @@
   }
 
   function setLineColour() {
-    const s = stops.find(x => x.id === currentStop);
-    document.body.classList.toggle("green", !!s && s.line ===
+    const s = stops.find(function (x) { return x.id === currentStop; });
+    document.body.classList.toggle("green", !!s && s.line === "green");
   }
 
   async function loadStops() {
     try {
-      const data = await getJSON(`${API}/stops`);
-      if (!data || !Array.isArray(data.stops)) throw new Errorted format");
+      const data = await getJSON(API + "/stops");
+      if (!data || !Array.isArray(data.stops)) {
+        throw new Error("Stop list was in an unexpected format");
+      }
       stops = data.stops;
       els.stop.innerHTML = "";
-      [["red", "Red Line"], ["green", "Green Line"]].forEach(([line, label]) => {
+      const lines = [["red", "Red Line"], ["green", "Green Line"]];
+      lines.forEach(function (pair) {
         const group = document.createElement("optgroup");
-        group.label = label;
-        stops.filter(s => s.line === line).forEach(s => {
-          const opt = document.createElement("option");
-          opt.value = s.id;
-          opt.textContent = s.name;
-          group.appendChild(opt);
-        });
-        if (group.children.length) els.stop.appendChild(group)
+        group.label = pair[1];
+        stops
+          .filter(function (s) { return s.line === pair[0]; })
+          .forEach(function (s) {
+            const opt = document.createElement("option");
+            opt.value = s.id;
+            opt.textContent = s.name;
+            group.appendChild(opt);
+          });
+        if (group.children.length) {
+          els.stop.appendChild(group);
+        }
       });
-      if (!stops.some(s => s.id === currentStop)) currentStop
+      if (!stops.some(function (s) { return s.id === currentStop; })) {
+        currentStop = "MYS";
+      }
       els.stop.value = currentStop;
       setLineColour();
     } catch (e) {
       showError("Couldn't load the stop list: " + e.message);
-      els.stop.innerHTML = `<option value="MYS">Mayor Square - NCI</option>`;
+      els.stop.innerHTML = '<option value="MYS">Mayor Square - NCI</option>';
     }
   }
 
   function renderTram(tram) {
     const row = document.createElement("div");
     row.className = "tram";
+
     const dest = document.createElement("div");
     dest.className = "dest";
     dest.textContent = tram.destination || "—";
+
     const due = document.createElement("div");
     due.className = "due";
     const mins = Number(tram.due);
-    if (tram.due === 0 || mins === 0 || String(tram.due).toUpp
+
+    if (mins === 0 || String(tram.due).toUpperCase() === "DUE") {
       due.classList.add("now");
       due.textContent = "Due";
     } else if (Number.isFinite(mins)) {
@@ -163,16 +279,21 @@
       unit.textContent = "min";
       due.appendChild(unit);
     } else {
-      due.textContent = tram.due ?? "—";
+      due.textContent = tram.due == null ? "—" : tram.due;
     }
-    row.append(dest, due);
+
+    row.appendChild(dest);
+    row.appendChild(due);
     return row;
   }
 
   async function loadForecast() {
     try {
-      const data = await getJSON(`${API}/forecast?stop=${encodeURIComponent(currentStop)}`);
-      if (!data || !Array.isArray(data.directions)) throw new xpected format");
+      const url = API + "/forecast?stop=" + encodeURIComponent(currentStop);
+      const data = await getJSON(url);
+      if (!data || !Array.isArray(data.directions)) {
+        throw new Error("Forecast was in an unexpected format");
+      }
 
       els.stopName.textContent = data.stopName || currentStop;
       els.message.textContent = data.message || "No service message.";
@@ -185,12 +306,14 @@
         els.directions.appendChild(p);
       }
 
-      data.directions.forEach(dir => {
+      data.directions.forEach(function (dir) {
         const card = document.createElement("section");
         card.className = "dir";
+
         const h = document.createElement("h2");
         h.textContent = dir.name || "Direction";
         card.appendChild(h);
+
         const trams = Array.isArray(dir.trams) ? dir.trams.slice(0, 3) : [];
         if (trams.length === 0) {
           const none = document.createElement("div");
@@ -198,14 +321,17 @@
           none.textContent = "No trams forecast";
           card.appendChild(none);
         } else {
-          trams.forEach(t => card.appendChild(renderTram(t)));
+          trams.forEach(function (t) { card.appendChild(renderTram(t)); });
         }
         els.directions.appendChild(card);
       });
 
       clearError();
-      els.updated.textContent = "Last updated: " +
-        new Date().toLocaleTimeString("en-IE", { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+      els.updated.textContent = "Last updated: " + new Date().toLocaleTimeString("en-IE", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
     } catch (e) {
       showError("Couldn't load live trams: " + e.message + ". Retrying in 20 seconds.");
     }
@@ -217,7 +343,7 @@
     timer = setInterval(loadForecast, REFRESH_MS);
   }
 
-  els.stop.addEventListener("change", () => {
+  els.stop.addEventListener("change", function () {
     currentStop = els.stop.value;
     localStorage.setItem(STORAGE_KEY, currentStop);
     setLineColour();
@@ -226,14 +352,22 @@
     startRefresh();
   });
 
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) loadForecast();
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) {
+      loadForecast();
+    }
   });
 
-  window.addEventListener("error", e => showError("Something w
-  window.addEventListener("unhandledrejection", e => showError("Something went wrong: " + (e.reason && e.reason.message || e.reason)));
+  window.addEventListener("error", function (e) {
+    showError("Something went wrong: " + e.message);
+  });
 
-  (async () => {
+  window.addEventListener("unhandledrejection", function (e) {
+    const r = e.reason;
+    showError("Something went wrong: " + (r && r.message ? r.message : r));
+  });
+
+  (async function () {
     await loadStops();
     startRefresh();
   })();
